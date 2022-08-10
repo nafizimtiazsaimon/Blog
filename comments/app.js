@@ -10,7 +10,7 @@ app.use(cors());
 const commentsByPostId = {};
 
 app.get("/posts/:id/comments", (req, res) => {
-  res.send(commentsByPostId[req.params.id]);
+  res.send(commentsByPostId[req.params.id] || []);
 });
 
 app.post("/posts/:id/comments", (req, res) => {
@@ -27,5 +27,5 @@ app.post("/posts/:id/comments", (req, res) => {
 });
 
 app.listen(4001, () => {
-  console.log("Port running on 4001");
+  console.log("Listening on 4001");
 });

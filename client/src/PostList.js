@@ -3,7 +3,7 @@ import axios from "axios";
 import CommentCreate from "./CommentCreate";
 import CommentList from "./CommentList";
 
-function PostList() {
+const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {

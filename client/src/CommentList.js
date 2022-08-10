@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function CommentList({ postId }) {
+const CommentList = ({ postId }) => {
   const [comments, setComments] = useState([]);
 
   const fetchData = async () => {
@@ -11,6 +11,7 @@ function CommentList({ postId }) {
 
     setComments(res.data);
   };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -20,6 +21,6 @@ function CommentList({ postId }) {
   });
 
   return <ul>{renderedComments}</ul>;
-}
+};
 
 export default CommentList;
